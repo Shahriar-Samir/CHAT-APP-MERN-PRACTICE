@@ -1,8 +1,8 @@
 {
   "scripts": {
     "build": "tsc",
-    "start:dev": "nodemon ./dist/server.ts",
-    "start:build": "ts-node-dev --respawn --transpile-only ./src/server.ts"
+    "start:build": "nodemon ./dist/server.ts",
+    "start:dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
