@@ -1,7 +1,7 @@
 import { TUser } from './user.interface';
 import UserModel from './users.model';
 
-export const addUserIntoDB = async (payload: TUser) => {
+export const createUserIntoDB = async (payload: TUser) => {
   const result = await UserModel.create(payload);
   return result;
 };
