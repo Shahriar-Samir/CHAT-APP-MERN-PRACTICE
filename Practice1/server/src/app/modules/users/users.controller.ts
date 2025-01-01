@@ -1,6 +1,6 @@
 import { createUserIntoDB } from './users.service';
 
-export const createUser = async (req, res) => {
+export const createUser = async (req, res, next) => {
   try {
     const result = await createUserIntoDB(req.body);
     return res.status(200).json({
@@ -10,11 +10,6 @@ export const createUser = async (req, res) => {
       data: result,
     });
   } catch (err) {
-    return res.status(400).json({
-      success: false,
-      statusCode: 400,
-      message: 'Failed to create user',
-      data: err,
-    });
+    return next(err);
   }
 };
