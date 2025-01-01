@@ -1,4 +1,4 @@
-import { createUserIntoDB } from './users.service';
+import { createUserIntoDB } from "./users.service";
 
 export const createUser = async (req, res, next) => {
   try {
