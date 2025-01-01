@@ -1,12 +1,14 @@
-import { createUserIntoDB } from "./users.service";
+import { createUserIntoDB } from './users.service';
+import sendResponse from '../../utils/sendResponse';
+import httpStatus from 'http-status';
 
 export const createUser = async (req, res, next) => {
   try {
     const result = await createUserIntoDB(req.body);
-    return res.status(200).json({
+    sendResponse(res, {
       success: true,
-      message: 'User created successfully',
-      statusCode: 200,
+      statusCode: httpStatus.OK,
+      message: 'Student created successfully',
       data: result,
     });
   } catch (err) {
